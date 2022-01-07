@@ -1,6 +1,5 @@
 version: "3.9"
 services:
-
 nginx:
   image: "nginx:latest"
   container_name: nginx
@@ -13,7 +12,6 @@ nginx:
     TZ: Europe/Moscow 
   depends_on:
     - php-fpm
-
 php-fpm: 
   image: "php:7.4-fpm-mysql"
   container_name: php-fpm
@@ -32,8 +30,6 @@ php-fpm:
   volumes: 
     - ./data:/var/lib/mysql
     - ./reg_dump.sql:/docker-entrypoint-initdb.d/reg_dump.sql
-
-
 phpmyadmin: 
   image: "phpmyadmin:latest"
   container_name: phpmyadmin
